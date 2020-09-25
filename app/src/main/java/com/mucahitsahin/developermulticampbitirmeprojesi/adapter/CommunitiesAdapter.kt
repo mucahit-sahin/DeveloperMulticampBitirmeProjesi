@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.community_recycler_row.view.*
 
 class CommunitiesAdapter(val communityList:MutableList<Community>):RecyclerView.Adapter<CommunitiesViewHolder> (){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommunitiesViewHolder {
-        var inflate= LayoutInflater.from(parent.context).inflate(R.layout.community_recycler_row,parent)
+        var inflate= LayoutInflater.from(parent.context).inflate(R.layout.community_recycler_row,parent,false)
         return CommunitiesViewHolder(inflate)
     }
 

@@ -4,5 +4,5 @@ import retrofit2.http.GET
 
 interface NewsApi {
     @GET("communities")
-    suspend fun getCommunities():CommunityResponse
+    suspend fun getCommunities():List<Community>?
 }
