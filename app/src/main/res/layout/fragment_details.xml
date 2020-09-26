@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/bannerImageView"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:src="@drawable/ic_launcher_background" />
 
     <TextView
@@ -23,7 +23,7 @@
     <ImageView
         android:id="@+id/leaderImageView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:src="@drawable/ic_launcher_background" />
 
     <TextView
@@ -36,6 +36,35 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/instagramButton"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/instagram_logo" />
+
+        <Button
+            android:id="@+id/twitterButton"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/twitter" />
+
+        <Button
+            android:id="@+id/youtubeButton"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/youtube" />
+
+        <Button
+            android:id="@+id/participationButton"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/participation" />
+    </LinearLayout>
 </LinearLayout>

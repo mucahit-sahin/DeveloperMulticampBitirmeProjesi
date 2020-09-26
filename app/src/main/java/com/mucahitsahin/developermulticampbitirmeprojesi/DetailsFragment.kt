@@ -1,5 +1,7 @@
 package com.mucahitsahin.developermulticampbitirmeprojesi
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
@@ -21,6 +23,23 @@ class DetailsFragment : Fragment() {
         descriptionTextView.text=args.Community.description
         leaderImageView.load(args.Community.leader?.photo)
         leaderNameTextView.text=args.Community.leader?.name
+
+        instagramButton.setOnClickListener {
+            val myIntent = Intent(Intent.ACTION_VIEW, Uri.parse(args.Community.link?.instagram));
+            startActivity(myIntent);
+        }
+        twitterButton.setOnClickListener {
+            val myIntent = Intent(Intent.ACTION_VIEW, Uri.parse(args.Community.link?.twitter));
+            startActivity(myIntent);
+        }
+        youtubeButton.setOnClickListener {
+            val myIntent = Intent(Intent.ACTION_VIEW, Uri.parse(args.Community.link?.youtube));
+            startActivity(myIntent);
+        }
+        participationButton.setOnClickListener {
+            val myIntent = Intent(Intent.ACTION_VIEW, Uri.parse(args.Community.link?.participation));
+            startActivity(myIntent);
+        }
     }
 
     override fun onCreateView(
