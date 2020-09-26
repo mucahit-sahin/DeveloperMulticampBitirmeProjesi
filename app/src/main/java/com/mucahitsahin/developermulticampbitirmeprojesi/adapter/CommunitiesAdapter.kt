@@ -9,7 +9,7 @@ import com.mucahitsahin.developermulticampbitirmeprojesi.R
 import com.mucahitsahin.developermulticampbitirmeprojesi.data.model.Community
 import kotlinx.android.synthetic.main.community_recycler_row.view.*
 
-class CommunitiesAdapter(val communityList:MutableList<Community>):RecyclerView.Adapter<CommunitiesViewHolder> (){
+class CommunitiesAdapter(val communityList:MutableList<Community>,val onClick: (Community) -> Unit):RecyclerView.Adapter<CommunitiesViewHolder> (){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommunitiesViewHolder {
         var inflate= LayoutInflater.from(parent.context).inflate(R.layout.community_recycler_row,parent,false)
         return CommunitiesViewHolder(inflate)
@@ -17,8 +17,7 @@ class CommunitiesAdapter(val communityList:MutableList<Community>):RecyclerView.
 
     override fun onBindViewHolder(holder: CommunitiesViewHolder, position: Int) {
         val community:Community=communityList[position]
-        holder.itemView.textView.text=community.name
-        holder.itemView.imageView.load(community.banner)
+        holder.bind(community,onClick)
     }
 
     override fun getItemCount(): Int {
@@ -27,5 +26,11 @@ class CommunitiesAdapter(val communityList:MutableList<Community>):RecyclerView.
 }
 
 class CommunitiesViewHolder(view:View):RecyclerView.ViewHolder(view) {
+    fun bind(community: Community,onClick: (Community)->Unit ){
+        itemView.imageView.load(community.banner)
 
+        itemView.setOnClickListener {
+
+        }
+    }
 }
