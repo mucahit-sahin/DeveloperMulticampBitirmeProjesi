@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.mucahitsahin.developermulticampbitirmeprojesi.adapter.CommunitiesAdapter
 import com.mucahitsahin.developermulticampbitirmeprojesi.data.model.RetrofitProvider
 import kotlinx.android.synthetic.main.fragment_list.*
@@ -17,9 +19,11 @@ class ListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         lifecycleScope.launchWhenCreated {
+
             val response = RetrofitProvider.newsApi.getCommunities()
             val adapter= CommunitiesAdapter(response.orEmpty().toMutableList()){
-                
+                val direction:NavDirections=ListFragmentDirections.actionListFragmentToDetailsFragment(it)
+                findNavController().navigate(direction)
             }
             communitiesRecyclerView.adapter=adapter
         }

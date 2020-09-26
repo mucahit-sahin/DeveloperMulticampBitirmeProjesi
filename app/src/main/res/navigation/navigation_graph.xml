@@ -18,5 +18,9 @@
         android:id="@+id/detailsFragment"
         android:name="com.mucahitsahin.developermulticampbitirmeprojesi.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="Community"
+            app:argType="com.mucahitsahin.developermulticampbitirmeprojesi.data.model.Community" />
+    </fragment>
 </navigation>

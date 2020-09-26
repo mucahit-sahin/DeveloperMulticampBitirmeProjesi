@@ -30,7 +30,7 @@ class CommunitiesViewHolder(view:View):RecyclerView.ViewHolder(view) {
         itemView.imageView.load(community.banner)
 
         itemView.setOnClickListener {
-
+            onClick(community)
         }
     }
 }
